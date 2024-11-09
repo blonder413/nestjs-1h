@@ -7,6 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { CrearLibroDto } from "./dto/crear-libros.dto";
 
 @Controller('libros')
 export class LibrosController {
@@ -21,13 +22,13 @@ export class LibrosController {
   }
 
   @Post()
-  crearLibro(@Body() libro) {
+  crearLibro(@Body() libro:CrearLibroDto) {
     // return libro;
-    return `${libro.autor} es el autor del libro ${libro.titulo}`;
+    return `${libro.autor} es el autor del libro ${libro.nombre}`;
   }
 
   @Put(':id')
-  editarLibro(@Param('id') id) {
+  editarLibro(@Param('id') id:number, @Body() ActualizarLibro: CrearLibroDto) {
     return `Editar libro de id ${id}`;
   }
 
