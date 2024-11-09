@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 
 @Controller('libros')
 export class LibrosController {
@@ -15,6 +23,16 @@ export class LibrosController {
   @Post()
   crearLibro(@Body() libro) {
     // return libro;
-    return `${libro.autor} es el autor del libro ${libro.titulo}`
+    return `${libro.autor} es el autor del libro ${libro.titulo}`;
+  }
+
+  @Put(':id')
+  editarLibro(@Param('id') id) {
+    return `Editar libro de id ${id}`;
+  }
+
+  @Delete(':id')
+  eliminarLibro(@Param('id') id) {
+    return `Eliminar libro id ${id}`;
   }
 }
