@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('libros')
 export class LibrosController {
@@ -10,5 +10,11 @@ export class LibrosController {
   @Get(':id')
   infoLibro(@Param() params) {
     return params;
+  }
+
+  @Post()
+  crearLibro(@Body() libro) {
+    // return libro;
+    return `${libro.autor} es el autor del libro ${libro.titulo}`
   }
 }
