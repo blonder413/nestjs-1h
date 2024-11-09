@@ -58,6 +58,31 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Instalar typescript
+```
+sudo npm i -g typescript
+```
+
+## Instalar nestjs
+```
+sudo npm i -g @nestjs/cli
+```
+
+## Crear proyecto
+```
+nest new prueba
+```
+
+## Ambiente de desarrollo
+```
+npm run start:dev
+```
+
+## Crear controlador
+```
+nest g controller libros
+```
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
